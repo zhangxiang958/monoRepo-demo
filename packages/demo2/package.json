@@ -1,0 +1,12 @@
+{
+  "name": "@pkg/demo2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@pkg/demo": "1.0.0"
+  }
+}
