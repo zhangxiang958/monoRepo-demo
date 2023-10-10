@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    /* Project Options */
+    "allowJs": true,
+    "checkJs": false,
+    "composite": true,
+    "declaration": true,
+    "declarationMap": false,
+    "lib": ["ES2019"],
+    "module": "commonjs",
+    "removeComments": true,
+    "sourceMap": false,
+    "target": "ES2019",
+
+    /* Module Resolution */
+    "allowSyntheticDefaultImports": true,
+    "allowUmdGlobalAccess": false,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+
+    /* Strict & Linter Checks */
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "strict": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+
+    /* Advanced */
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "newLine": "LF",
+    "noStrictGenericChecks": false,
+    "resolveJsonModule": true,
+    "useUnknownInCatchVariables": false
+  },
+  "exclude": [
+    "**/node_modules/**",
+    "**/lib/**",
+    "**/__tests__/**",
+    "**/__e2e__/**"
+  ]
+}

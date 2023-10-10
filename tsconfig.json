@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.base.json",
+  
+  "exclude": [
+    "**/node_modules/**",
+    "**/lib/**",
+    "**/ecosystem.config.js",
+    "packages/proto/**",
+    "scripts/**",
+    "jest.config.js"
+  ]
+}
