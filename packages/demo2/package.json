@@ -2,6 +2,7 @@
   "name": "@pkg/demo2",
   "version": "1.0.0",
   "main": "index.js",
+  "private": "true",
   "scripts": {
     "test": "node index.js"
   },
