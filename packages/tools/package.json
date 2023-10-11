@@ -8,5 +8,8 @@
     "build": "tsc -b tsconfig.build.json"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@pkg/utils": "workspace:^"
+  }
 }

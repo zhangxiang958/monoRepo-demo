@@ -1,0 +1,18 @@
+{
+    "extends": "./tsconfig.base.json",
+    "references": [
+        {
+        "path": "./packages/utils/tsconfig.build.json"
+        },
+        {
+        "path": "./packages/tools/tsconfig.build.json"
+        },
+        {
+        "path": "./servers/proxy/tsconfig.build.json"
+        },
+        {
+        "path": "./servers/endpoint/tsconfig.build.json"
+        }
+    ],
+    "files": []
+}
