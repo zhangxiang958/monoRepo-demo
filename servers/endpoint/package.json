@@ -8,5 +8,12 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/koa": "^2.13.9"
+  },
+  "dependencies": {
+    "@pkg/tools": "workspace:^",
+    "koa": "^2.14.2"
+  }
 }

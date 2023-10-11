@@ -4,9 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "svr": "ts-node src/index.ts"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@pkg/tools": "workspace:^",
+    "koa": "^2.14.2"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.9"
+  }
 }
