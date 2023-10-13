@@ -26,3 +26,27 @@ pnpm init
 
 ### add
 pnpm add -Dw xxxx
+
+
+### 构建镜像
+
+```
+docker build -f servers/proxy/Dockerfile -t testproxysvr --build-arg APP=proxy --target svr .
+```
+
+#### 构建现在可以在根目录执行了
+一个牛逼的命令
+```
+pnpm run -r --if-present build:tar:docker
+```
+
+
+### 测试镜像
+```
+docker run -it testproxysvr /bin/bash
+```
+
+#### 测试 context 镜像
+```
+docker run -it contextproxysvr /bin/bash
+```

@@ -6,13 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc -b tsconfig.build.json",
-    "svr": "ts-node src/index.ts"
+    "svr": "ts-node src/index.ts",
+    "run": "docker run -it testproxysvr /bin/bash",
+    "buildImage": "cp ../../pnpm-*.yaml . && cp ../../.npmrc . && docker build -t testproxysvr .",
+    "build:tar:docker": "tar --exclude='node_modules' --exclude='.git' -cf - ../../ | docker build -f servers/proxy/Dockerfile.context - -t contextproxysvr"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@pkg/tools": "workspace:^",
+    "aegis-web-sdk": "1.37.1",
     "koa": "^2.14.2"
   },
   "devDependencies": {

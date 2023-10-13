@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@pkg/tools": "workspace:^",
+    "aegis-web-sdk": "^1.38.3",
     "koa": "^2.14.2"
   }
 }

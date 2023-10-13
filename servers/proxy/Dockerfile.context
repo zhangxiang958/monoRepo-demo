@@ -1,0 +1,17 @@
+FROM node:18
+ENV CI=true
+RUN npm i -g pnpm
+ARG APP
+
+WORKDIR /app
+COPY ../.. .
+# 这种 dockerfile，在 docker 里面构建，缺点就是:
+# 1. 相当于把整个工作区复制过去，docker 镜像里面比较脏，这个目录下面你是能看到别的微服务的代码的
+# 2. 每次构建镜像都要重新 pnpm install 一次
+# 3. 这个方式还是需要修改目录地址
+# RUN pnpm install -F @svr/${APP}
+# RUN pnpm install --filter "@mono/web..."
+# RUN pnpm build --filter "@mono/web..."
+# RUN pnpm test --if-present --filter "@mono/web"
+
+CMD /bin/sh -c "sleep 9999999"
