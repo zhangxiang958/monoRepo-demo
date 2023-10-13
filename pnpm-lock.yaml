@@ -11,6 +11,9 @@ importers:
       '@types/node':
         specifier: ^20.8.4
         version: 20.8.4
+      meow:
+        specifier: ^12.1.1
+        version: 12.1.1
       ts-node:
         specifier: ^10.9.1
         version: 10.9.1(@types/node@20.8.4)(typescript@4.5.2)
@@ -453,6 +456,11 @@ packages:
     resolution: {integrity: sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=}
     engines: {node: '>= 0.6'}
     dev: false
+
+  /meow@12.1.1:
+    resolution: {integrity: sha512-BhXM0Au22RwUneMPwSCnyhTOizdWoIEPU9sp0Aqa1PnDMR5Wv2FGXYDjuzJEIX+Eo2Rb8xuYe5jrnm5QowQFkw==}
+    engines: {node: '>=16.10'}
+    dev: true
 
   /mime-db@1.52.0:
     resolution: {integrity: sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==}

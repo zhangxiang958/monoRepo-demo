@@ -50,3 +50,5 @@ docker run -it testproxysvr /bin/bash
 ```
 docker run -it contextproxysvr /bin/bash
 ```
+https://github1s.com/gaggle/exploring-the-monorepo/blob/attempt-perfect-docker/apps/web/Dockerfile#L41
+https://dev.to/jonlauridsen/exploring-the-monorepo-5-perfect-docker-52aj

@@ -13,7 +13,7 @@ FROM base AS topdep
 WORKDIR /
 RUN mkdir node_modules pnpm-store packages
 # 这里是可以省略掉的，因为已经从存储库这里复制出来了 package-import-method=copy
-COPY pnpm-store/ pnpm-store
+# COPY pnpm-store/ pnpm-store
 COPY node_modules/ node_modules
 COPY packages/ packages
 
@@ -22,7 +22,7 @@ WORKDIR /usr/app
 COPY ["pnpm-*.yaml", ".npmrc", "./"]
 
 COPY "servers/${APP}/" .
-RUN pnpm install --offline --ignore-scripts --frozen-lockfile
+# RUN pnpm install --offline --ignore-scripts --frozen-lockfile
 
 EXPOSE 8080
 CMD /bin/sh -c "sleep 9999999"
