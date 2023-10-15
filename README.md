@@ -52,3 +52,10 @@ docker run -it contextproxysvr /bin/bash
 ```
 https://github1s.com/gaggle/exploring-the-monorepo/blob/attempt-perfect-docker/apps/web/Dockerfile#L41
 https://dev.to/jonlauridsen/exploring-the-monorepo-5-perfect-docker-52aj
+
+
+```
+pnpm --silent --workspace-root pnpm-context servers/proxy/Dockerfile.context | docker build --build-arg PACKAGE_PATH=servers/proxy --build-arg APP=proxy - -t contextproxysvr
+```
+
+--silent 是只打印命令输出的内容，而不打印 pnpm 本身的东西，这个参数是必须的，否则会影响 docker context 的数据，导致解析失败从而无法打包
