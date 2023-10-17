@@ -17,12 +17,12 @@ WORKDIR /app
 
 
 COPY ./meta .
+
+COPY ./deps .
 RUN pnpm install --filter "{${PACKAGE_PATH}}..."\
     --frozen-lockfile\
     --unsafe-perm
-
-COPY ./deps .
-RUN pnpm build --if-present --filter "{${PACKAGE_PATH}}}^..."
+# RUN pnpm build --if-present --filter "{${PACKAGE_PATH}}^..."
 
 COPY ./pkg .
 

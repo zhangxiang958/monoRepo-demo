@@ -11,6 +11,9 @@ importers:
       '@pnpm/filter-workspace-packages':
         specifier: ^7.1.3
         version: 7.1.3(@pnpm/logger@5.0.0)
+      '@types/long':
+        specifier: ^4.0.2
+        version: 4.0.2
       '@types/node':
         specifier: ^20.8.4
         version: 20.8.4
@@ -680,6 +683,10 @@ packages:
       '@types/keygrip': 1.0.3
       '@types/koa-compose': 3.2.6
       '@types/node': 20.8.4
+    dev: true
+
+  /@types/long@4.0.2:
+    resolution: {integrity: sha512-MqTGEo5bj5t157U6fA/BiDynNkn0YknVdh48CMPkTSpFTVmvao5UQmm7uEF6xBEo7qIMAlY/JSleYaE6VOdpaA==}
     dev: true
 
   /@types/mime@1.3.3:
@@ -1414,7 +1421,7 @@ packages:
     dev: true
 
   /individual@3.0.0:
-    resolution: {integrity: sha512-rUY5vtT748NMRbEMrTNiFfy29BgGZwGXUi2NFUVMWQrogSLzlJvQV9eeMWi+g1aVaQ53tpyLAQtd5x/JH0Nh1g==}
+    resolution: {integrity: sha1-58pPhfiVewGHNPKFdQ3CLsL5hi0=}
     dev: true
 
   /inflight@1.0.6:
@@ -1515,7 +1522,7 @@ packages:
     dev: true
 
   /json-stringify-safe@5.0.1:
-    resolution: {integrity: sha512-ZClg6AaYvamvYEE82d3Iyd3vSSIjQ+odgjaTzRuO3s7toCdFKczob2i0zCh7JE8kWn17yvAWhUVxvqGwUalsRA==}
+    resolution: {integrity: sha1-Epai1Y/UXxmg9s4B1lcB4sc1tus=}
     dev: true
 
   /json5@2.2.3:

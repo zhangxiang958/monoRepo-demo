@@ -10,7 +10,8 @@
     "run": "docker run -it testproxysvr /bin/bash",
     "buildImage": "cp ../../pnpm-*.yaml . && cp ../../.npmrc . && docker build -t testproxysvr .",
     "build:tar:docker": "tar --exclude='node_modules' --exclude='.git' -cf - ../../ | docker build -f servers/proxy/Dockerfile.context - -t contextproxysvr",
-    "build:docker:context": "pnpm --silent --workspace-root pnpm-context servers/proxy/Dockerfile.context | docker build --build-arg PACKAGE_PATH=servers/proxy --build-arg APP=proxy - -t contextproxysvr"
+    "build:docker:context": "pnpm --silent --workspace-root pnpm-context -p '!**/node_modules/**' -p '!**/tsconfig.build.tsbuildinfo' servers/proxy/Dockerfile.context | docker build --build-arg PACKAGE_PATH=servers/proxy --build-arg APP=proxy - -t contextproxysvr",
+    "build:docker:context:list": "pnpm --silent --workspace-root pnpm-context -p '!**/node_modules/**' -p '!**/tsconfig.build.tsbuildinfo' -l servers/proxy/Dockerfile.context"
   },
   "keywords": [],
   "author": "",

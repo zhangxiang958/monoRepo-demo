@@ -113,7 +113,7 @@ async function getFilesFromPnpmSelector(selector, cwd, options = {}) {
   return globby(patterns, {
     cwd,
     dot: true,
-    gitignore: true
+    gitignore: false
   })
 }
 
@@ -127,10 +127,12 @@ async function getFilesFromPnpmSelector(selector, cwd, options = {}) {
  */
 async function getMetafilesFromPnpmSelector(selector, cwd, options = {}) {
   const [rootMetas, projectMetas] = await Promise.all([
-    globby(['package.json', 'pnpm-lock.yaml', 'pnpm-workspace.yaml'], { cwd, dot: true, gitignore: true }),
+    globby([
+      'package.json', 'pnpm-lock.yaml', 'pnpm-workspace.yaml', 'tsconfig.*.json', 'tsconfig.json'
+    ], { cwd, dot: true, gitignore: false }),
     getPackagePathsFronPnpmSelector(selector, cwd).then(paths => {
       const patterns = paths.map(p => `${p}/**/package.json`).concat(options.extraPatterns || [])
-      return globby(patterns, { cwd, dot: true, gitignore: true })
+      return globby(patterns, { cwd, dot: true, gitignore: false })
     })
   ])
   return rootMetas.concat(projectMetas)

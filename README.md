@@ -40,6 +40,16 @@ docker build -f servers/proxy/Dockerfile -t testproxysvr --build-arg APP=proxy -
 pnpm run -r --if-present build:tar:docker
 ```
 
+```
+pnpm run -r --if-present build:docker:context
+```
+
+测试命令
+
+```
+pnpm run -r --if-present build:docker:context:list
+```
+
 
 ### 测试镜像
 ```
@@ -59,3 +69,9 @@ pnpm --silent --workspace-root pnpm-context servers/proxy/Dockerfile.context | d
 ```
 
 --silent 是只打印命令输出的内容，而不打印 pnpm 本身的东西，这个参数是必须的，否则会影响 docker context 的数据，导致解析失败从而无法打包
+
+
+
+```
+
+```
