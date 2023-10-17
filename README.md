@@ -73,5 +73,7 @@ pnpm --silent --workspace-root pnpm-context servers/proxy/Dockerfile.context | d
 
 
 ```
+保证在 /app 路径下面
 
+mkdir lib && ln -s /app/servers/proxy/lib/index.js /app/lib/index.js
 ```
