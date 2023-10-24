@@ -50,6 +50,12 @@ pnpm run -r --if-present build:docker:context
 pnpm run -r --if-present build:docker:context:list
 ```
 
+构建命令
+```
+pnpm --silent --workspace-root pnpm-context -p '!**/node_modules/**' -p '!**/tsconfig.build.tsbuildinfo' servers/proxy/Dockerfile.context |DOCKER_BUILDKIT=1 docker build --build-arg PACKAGE_PATH=servers/proxy --build-arg APP=proxy --build-arg STORE_DIR=$(pnpm store path | tr -d '"') --target=prod - -t contextproxysvr:stage
+```
+
+
 
 ### 测试镜像
 ```

@@ -6,13 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc -b tsconfig.build.json",
-    "pnpm-context": "scripts/pnpm-context.mjs"
+    "pnpm-context": "scripts/pnpm-context.mjs",
+    "show-store-dir": "scripts/show-store-dir.mjs",
+    "preinstall": "echo 'preinstall'",
+    "postinstall": "echo 'postinstall'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@pnpm/filter-workspace-packages": "^7.1.3",
+    "@pnpm/store-path": "^8.0.0",
     "@types/long": "^4.0.2",
     "@types/node": "^20.8.4",
     "globby": "^13.2.2",

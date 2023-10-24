@@ -1,8 +1,7 @@
-FROM node:18
+FROM node:18 AS base
 ENV CI=true
-RUN npm i -g pnpm
-ARG APP
-ARG PACKAGE_PATH
+ARG PNPM_VERSION=8.9.2
+RUN npm --no-update-notifier --no-fund --global install pnpm@${PNPM_VERSION}
 
 WORKDIR /app
 # COPY ../.. .
@@ -15,15 +14,29 @@ WORKDIR /app
 # RUN pnpm build --filter "@mono/web..."
 # RUN pnpm test --if-present --filter "@mono/web"
 
+FROM base AS store
+COPY ./meta/pnpm-lock.yaml .
+RUN --mount=type=cache,id=pnpm-store,target=/Users/zhangxiang/Documents/sideProjects/monorepo_mini_docker/pnpm-store\
+    pnpm config set store-dir /Users/zhangxiang/Documents/sideProjects/monorepo_mini_docker/pnpm-store && pnpm fetch --prod
 
+FROM store AS dev
+ARG PACKAGE_PATH
 COPY ./meta .
-
 COPY ./deps .
-RUN pnpm install --filter "{${PACKAGE_PATH}}..."\
-    --frozen-lockfile\
-    --unsafe-perm
-# RUN pnpm build --if-present --filter "{${PACKAGE_PATH}}^..."
-
 COPY ./pkg .
+RUN --mount=type=cache,id=pnpm-store,target=/Users/zhangxiang/Documents/sideProjects/monorepo_mini_docker/pnpm-store\
+    pnpm config set store-dir /Users/zhangxiang/Documents/sideProjects/monorepo_mini_docker/pnpm-store && pnpm install --filter "{${PACKAGE_PATH}}..."\
+    --offline\
+    --frozen-lockfile\
+    --prod\
+    --unsafe-perm
+
+# RUN pnpm install --filter "{${PACKAGE_PATH}}..."\
+#     --frozen-lockfile\
+#     --prod\
+#     --unsafe-perm
+
+FROM dev as prod
+COPY --from=dev /app /app
 
 CMD /bin/sh -c "sleep 9999999"
